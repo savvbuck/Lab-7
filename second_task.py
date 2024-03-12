@@ -2,6 +2,7 @@ import csv
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 with open('data1.csv', newline='', encoding='windows-1251') as csvfile:
     data = []
     reader = csv.reader(csvfile, delimiter=';')
@@ -18,7 +19,6 @@ plt.axis([0, len(x1), 0, 120])
 ax.set_xticks(np.arange(0, len(x1), 300))
 plt.xlabel('1 column')
 plt.ylabel('4 and 10 column')
-
 
 plt.legend()
 plt.show()

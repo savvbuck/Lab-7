@@ -1,6 +1,7 @@
 import numpy as np
 import time
 
+
 def timer(func):
     def wrapper(*args, **kwargs):
         begin = time.perf_counter()
