@@ -11,10 +11,12 @@ with open('data1.csv', newline='', encoding='windows-1251') as csvfile:
 x1 = [data[i][0] for i in range(1, len(data))] #1 столбец
 y1 = [float(data[i][3]) for i in range(1, len(data))] #4 столбец
 y2 = [float(data[i][9]) for i in range(1, len(data))] #10 столбец
+y_av = [float((y1[i]+y2[i])/2) for i in range(len(y1))]
 
 figs, ax = plt.subplots(figsize=(8, 4))
-plt.plot(x1, y1, label='4-column plot')
+plt.plot(x1, y1, label='4-column plot', color='brown')
 plt.plot(x1, y2, label='10-column plot')
+plt.plot(x1, y_av, label='average')
 plt.axis([0, len(x1), 0, 120])
 ax.set_xticks(np.arange(0, len(x1), 300))
 plt.xlabel('1 column')
